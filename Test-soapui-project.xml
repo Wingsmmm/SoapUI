@@ -1,0 +1,767 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="caf29482-f867-46cd-aec0-86719ffd4707" activeEnvironment="Default" name="Test" resourceRoot="" soapui-version="5.6.0" abortOnError="false" runType="SEQUENTIAL" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" id="d3ee4553-d413-44c3-abd6-75067ece3211" wsaVersion="NONE" name="WrapperSoapServerBinding" type="wsdl" bindingName="{http://foo.bar/wrappersoapserver}WrapperSoapServerBinding" soapVersion="1_1" anonymous="optional" definition="http://users.bugred.ru/tasks/soap/WrapperSoapServer.php?wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="http://users.bugred.ru/tasks/soap/WrapperSoapServer.php?wsdl"><con:part><con:url>http://users.bugred.ru/tasks/soap/WrapperSoapServer.php?wsdl</con:url><con:content><![CDATA[<definitions name="WrapperSoapServer" targetNamespace="http://foo.bar/wrappersoapserver" xmlns:tns="http://foo.bar/wrappersoapserver" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:ns="http://foo.bar/wrappersoapserver/types">
+  <types>
+    <xsd:schema targetNamespace="http://foo.bar/wrappersoapserver/types" xmlns="http://foo.bar/wrappersoapserver/types">
+      <xsd:complexType name="ArrayOfResults">
+        <xsd:complexContent>
+          <xsd:restriction base="soapenc:Array">
+            <xsd:attribute ref="soapenc:arrayType" soap:arrayType="xsd:array[]"/>
+          </xsd:restriction>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:complexType name="MagicSearch">
+        <xsd:sequence>
+          <xsd:element name="foundCount" type="xsd:int"/>
+          <xsd:element name="results" type="ns:ArrayOfResults"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="MagicSearch" nillable="true" type="ns:MagicSearch"/>
+      <xsd:complexType name="ArrayOfCompany_users">
+        <xsd:complexContent>
+          <xsd:restriction base="soapenc:Array">
+            <xsd:attribute ref="soapenc:arrayType" soap:arrayType="xsd:array[]"/>
+          </xsd:restriction>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:complexType name="ArrayOfUsers">
+        <xsd:complexContent>
+          <xsd:restriction base="soapenc:Array">
+            <xsd:attribute ref="soapenc:arrayType" soap:arrayType="xsd:array[]"/>
+          </xsd:restriction>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:complexType name="CompanyReturn">
+        <xsd:sequence>
+          <xsd:element name="id_company" type="xsd:int"/>
+          <xsd:element name="message" type="xsd:string"/>
+          <xsd:element name="name" type="xsd:string"/>
+          <xsd:element name="type" type="xsd:string"/>
+          <xsd:element name="inn" type="xsd:string"/>
+          <xsd:element name="ogrn" type="xsd:string"/>
+          <xsd:element name="kpp" type="xsd:string"/>
+          <xsd:element name="phone" type="xsd:string"/>
+          <xsd:element name="adress" type="xsd:string"/>
+          <xsd:element name="users" type="ns:ArrayOfUsers"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="CompanyReturn" nillable="true" type="ns:CompanyReturn"/>
+      <xsd:complexType name="ArrayOfTasks">
+        <xsd:complexContent>
+          <xsd:restriction base="soapenc:Array">
+            <xsd:attribute ref="soapenc:arrayType" soap:arrayType="xsd:array[]"/>
+          </xsd:restriction>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:complexType name="ArrayOfCompanies">
+        <xsd:complexContent>
+          <xsd:restriction base="soapenc:Array">
+            <xsd:attribute ref="soapenc:arrayType" soap:arrayType="xsd:array[]"/>
+          </xsd:restriction>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:complexType name="UserReturnTask">
+        <xsd:sequence>
+          <xsd:element name="email" type="xsd:string"/>
+          <xsd:element name="name" type="xsd:string"/>
+          <xsd:element name="avatar" type="xsd:string"/>
+          <xsd:element name="password" type="xsd:string"/>
+          <xsd:element name="birthday" type="xsd:string"/>
+          <xsd:element name="gender" type="xsd:string"/>
+          <xsd:element name="date_start" type="xsd:string"/>
+          <xsd:element name="hobby" type="xsd:string"/>
+          <xsd:element name="name1" type="xsd:string"/>
+          <xsd:element name="surname1" type="xsd:string"/>
+          <xsd:element name="fathername1" type="xsd:string"/>
+          <xsd:element name="cat" type="xsd:string"/>
+          <xsd:element name="dog" type="xsd:string"/>
+          <xsd:element name="parrot" type="xsd:string"/>
+          <xsd:element name="cavy" type="xsd:string"/>
+          <xsd:element name="hamster" type="xsd:string"/>
+          <xsd:element name="squirrel" type="xsd:string"/>
+          <xsd:element name="phone" type="xsd:string"/>
+          <xsd:element name="adres" type="xsd:string"/>
+          <xsd:element name="tasks" type="ns:ArrayOfTasks"/>
+          <xsd:element name="companies" type="ns:ArrayOfCompanies"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="UserReturnTask" nillable="true" type="ns:UserReturnTask"/>
+      <xsd:complexType name="TaskReturn">
+        <xsd:sequence>
+          <xsd:element name="id_task" type="xsd:int"/>
+          <xsd:element name="message" type="xsd:string"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="TaskReturn" nillable="true" type="ns:TaskReturn"/>
+      <xsd:complexType name="UserReturn">
+        <xsd:sequence>
+          <xsd:element name="email" type="xsd:string"/>
+          <xsd:element name="name" type="xsd:string"/>
+          <xsd:element name="avatar" type="xsd:string"/>
+          <xsd:element name="password" type="xsd:string"/>
+          <xsd:element name="birthday" type="xsd:string"/>
+          <xsd:element name="gender" type="xsd:string"/>
+          <xsd:element name="date_start" type="xsd:string"/>
+          <xsd:element name="hobby" type="xsd:string"/>
+          <xsd:element name="name1" type="xsd:string"/>
+          <xsd:element name="surname1" type="xsd:string"/>
+          <xsd:element name="fathername1" type="xsd:string"/>
+          <xsd:element name="cat" type="xsd:string"/>
+          <xsd:element name="dog" type="xsd:string"/>
+          <xsd:element name="parrot" type="xsd:string"/>
+          <xsd:element name="cavy" type="xsd:string"/>
+          <xsd:element name="hamster" type="xsd:string"/>
+          <xsd:element name="squirrel" type="xsd:string"/>
+          <xsd:element name="phone" type="xsd:string"/>
+          <xsd:element name="adres" type="xsd:string"/>
+          <xsd:element name="inn" type="xsd:int"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="UserReturn" nillable="true" type="ns:UserReturn"/>
+      <xsd:complexType name="ArrayOfCompanys">
+        <xsd:complexContent>
+          <xsd:restriction base="soapenc:Array">
+            <xsd:attribute ref="soapenc:arrayType" soap:arrayType="xsd:array[]"/>
+          </xsd:restriction>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:complexType name="UserReturnFull">
+        <xsd:sequence>
+          <xsd:element name="email" type="xsd:string"/>
+          <xsd:element name="name" type="xsd:string"/>
+          <xsd:element name="avatar" type="xsd:string"/>
+          <xsd:element name="password" type="xsd:string"/>
+          <xsd:element name="birthday" type="xsd:string"/>
+          <xsd:element name="gender" type="xsd:string"/>
+          <xsd:element name="date_start" type="xsd:string"/>
+          <xsd:element name="hobby" type="xsd:string"/>
+          <xsd:element name="name1" type="xsd:string"/>
+          <xsd:element name="surname1" type="xsd:string"/>
+          <xsd:element name="fathername1" type="xsd:string"/>
+          <xsd:element name="cat" type="xsd:string"/>
+          <xsd:element name="dog" type="xsd:string"/>
+          <xsd:element name="parrot" type="xsd:string"/>
+          <xsd:element name="cavy" type="xsd:string"/>
+          <xsd:element name="hamster" type="xsd:string"/>
+          <xsd:element name="squirrel" type="xsd:string"/>
+          <xsd:element name="phone" type="xsd:string"/>
+          <xsd:element name="adres" type="xsd:string"/>
+          <xsd:element name="tasks" type="ns:ArrayOfTasks"/>
+          <xsd:element name="companys" type="ns:ArrayOfCompanys"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="UserReturnFull" nillable="true" type="ns:UserReturnFull"/>
+    </xsd:schema>
+  </types>
+  <message name="DeleteTaskRequest">
+    <part name="email_owner" type="xsd:string"/>
+    <part name="id_task" type="xsd:int"/>
+  </message>
+  <message name="DeleteTaskResponse">
+    <part name="result" type="xsd:string"/>
+  </message>
+  <message name="MagicSearchRequest">
+    <part name="query" type="xsd:string"/>
+    <part name="partyType" type="xsd:string"/>
+    <part name="fullSimilarity" type="xsd:bool"/>
+    <part name="taskStatus" type="xsd:string"/>
+    <part name="include" type="xsd:mixed"/>
+    <part name="maxCount" type="xsd:int"/>
+  </message>
+  <message name="MagicSearchResponse">
+    <part name="MagicSearch" element="ns:MagicSearch"/>
+  </message>
+  <message name="AddTaskInCronRequest">
+    <part name="email_owner" type="xsd:string"/>
+    <part name="id_task" type="xsd:int"/>
+    <part name="hours" type="xsd:string"/>
+    <part name="minutes" type="xsd:string"/>
+    <part name="month" type="xsd:string"/>
+    <part name="days" type="xsd:string"/>
+    <part name="day_weeks" type="xsd:string"/>
+  </message>
+  <message name="AddTaskInCronResponse">
+    <part name="result" type="xsd:string"/>
+  </message>
+  <message name="UpdateTaskRequest">
+    <part name="email_owner" type="xsd:string"/>
+    <part name="email_assign" type="xsd:string"/>
+    <part name="id_task" type="xsd:int"/>
+    <part name="task_title" type="xsd:string"/>
+    <part name="task_description" type="xsd:string"/>
+  </message>
+  <message name="UpdateTaskResponse">
+    <part name="result" type="xsd:string"/>
+  </message>
+  <message name="CreateCompanyRequest">
+    <part name="company_name" type="xsd:string"/>
+    <part name="company_type" type="xsd:string"/>
+    <part name="company_users" type="ns:ArrayOfCompany_users"/>
+    <part name="email_owner" type="xsd:string"/>
+  </message>
+  <message name="CreateCompanyResponse">
+    <part name="CompanyReturn" element="ns:CompanyReturn"/>
+  </message>
+  <message name="CreateUserRequest">
+    <part name="email" type="xsd:string"/>
+    <part name="name" type="xsd:string"/>
+    <part name="tasks" type="ns:ArrayOfTasks"/>
+    <part name="companies" type="ns:ArrayOfCompanies"/>
+    <part name="hobby" type="xsd:string"/>
+    <part name="adres" type="xsd:string"/>
+    <part name="name1" type="xsd:string"/>
+    <part name="surname1" type="xsd:string"/>
+    <part name="fathername1" type="xsd:string"/>
+    <part name="cat" type="xsd:string"/>
+    <part name="dog" type="xsd:string"/>
+    <part name="parrot" type="xsd:string"/>
+    <part name="cavy" type="xsd:string"/>
+    <part name="hamster" type="xsd:string"/>
+    <part name="squirrel" type="xsd:string"/>
+    <part name="phone" type="xsd:string"/>
+    <part name="inn" type="xsd:string"/>
+    <part name="gender" type="xsd:string"/>
+    <part name="birthday" type="xsd:string"/>
+    <part name="date_start" type="xsd:string"/>
+  </message>
+  <message name="CreateUserResponse">
+    <part name="UserReturnTask" element="ns:UserReturnTask"/>
+  </message>
+  <message name="CreateUserWithTasksRequest">
+    <part name="email" type="xsd:string"/>
+    <part name="name" type="xsd:string"/>
+    <part name="tasks" type="ns:ArrayOfTasks"/>
+    <part name="companies" type="ns:ArrayOfCompanies"/>
+    <part name="hobby" type="xsd:string"/>
+    <part name="adres" type="xsd:string"/>
+    <part name="name1" type="xsd:string"/>
+    <part name="surname1" type="xsd:string"/>
+    <part name="fathername1" type="xsd:string"/>
+    <part name="cat" type="xsd:string"/>
+    <part name="dog" type="xsd:string"/>
+    <part name="parrot" type="xsd:string"/>
+    <part name="cavy" type="xsd:string"/>
+    <part name="hamster" type="xsd:string"/>
+    <part name="squirrel" type="xsd:string"/>
+    <part name="phone" type="xsd:string"/>
+    <part name="inn" type="xsd:string"/>
+    <part name="gender" type="xsd:string"/>
+    <part name="birthday" type="xsd:string"/>
+    <part name="date_start" type="xsd:string"/>
+  </message>
+  <message name="CreateUserWithTasksResponse">
+    <part name="UserReturnTask" element="ns:UserReturnTask"/>
+  </message>
+  <message name="CreateTaskRequest">
+    <part name="task_title" type="xsd:string"/>
+    <part name="task_description" type="xsd:string"/>
+    <part name="email_owner" type="xsd:string"/>
+    <part name="email_assign" type="xsd:string"/>
+  </message>
+  <message name="CreateTaskResponse">
+    <part name="TaskReturn" element="ns:TaskReturn"/>
+  </message>
+  <message name="DeleteUserRequest">
+    <part name="email" type="xsd:string"/>
+  </message>
+  <message name="DeleteUserResponse">
+    <part name="result" type="xsd:string"/>
+  </message>
+  <message name="UpdateUserOneFieldRequest">
+    <part name="email" type="xsd:string"/>
+    <part name="field" type="xsd:string"/>
+    <part name="value" type="xsd:string"/>
+  </message>
+  <message name="UpdateUserOneFieldResponse">
+    <part name="result" type="xsd:string"/>
+  </message>
+  <message name="FullUpdateUserRequest">
+    <part name="email" type="xsd:string"/>
+    <part name="hobby" type="xsd:string"/>
+    <part name="name" type="xsd:string"/>
+    <part name="name1" type="xsd:string"/>
+    <part name="surname1" type="xsd:string"/>
+    <part name="fathername1" type="xsd:string"/>
+    <part name="cat" type="xsd:string"/>
+    <part name="dog" type="xsd:string"/>
+    <part name="parrot" type="xsd:string"/>
+    <part name="cavy" type="xsd:string"/>
+    <part name="hamster" type="xsd:string"/>
+    <part name="squirrel" type="xsd:string"/>
+    <part name="phone" type="xsd:string"/>
+    <part name="adres" type="xsd:string"/>
+    <part name="gender" type="xsd:string"/>
+    <part name="birthday" type="xsd:string"/>
+    <part name="date_start" type="xsd:string"/>
+    <part name="inn" type="xsd:string"/>
+  </message>
+  <message name="FullUpdateUserResponse">
+    <part name="userReturn" element="ns:UserReturn"/>
+  </message>
+  <message name="doLoginRequest">
+    <part name="email" type="xsd:string"/>
+    <part name="password" type="xsd:string"/>
+  </message>
+  <message name="doLoginResponse">
+    <part name="result" type="xsd:bool"/>
+  </message>
+  <message name="getCompanyRequest">
+    <part name="id_company" type="xsd:int"/>
+  </message>
+  <message name="getCompanyResponse">
+    <part name="companyReturn" element="ns:CompanyReturn"/>
+  </message>
+  <message name="getUserFullRequest">
+    <part name="email" type="xsd:string"/>
+  </message>
+  <message name="getUserFullResponse">
+    <part name="userReturnFull" element="ns:UserReturnFull"/>
+  </message>
+  <message name="getUserRequest">
+    <part name="email" type="xsd:string"/>
+  </message>
+  <message name="getUserResponse">
+    <part name="userReturn" element="ns:UserReturn"/>
+  </message>
+  <message name="doRegisterRequest">
+    <part name="email" type="xsd:string"/>
+    <part name="name" type="xsd:string"/>
+    <part name="password" type="xsd:string"/>
+  </message>
+  <message name="doRegisterResponse">
+    <part name="userReturn" element="ns:UserReturn"/>
+  </message>
+  <portType name="WrapperSoapServerPortType">
+    <operation name="DeleteTask">
+      <input message="tns:DeleteTaskRequest"/>
+      <output message="tns:DeleteTaskResponse"/>
+    </operation>
+    <operation name="MagicSearch">
+      <input message="tns:MagicSearchRequest"/>
+      <output message="tns:MagicSearchResponse"/>
+    </operation>
+    <operation name="AddTaskInCron">
+      <input message="tns:AddTaskInCronRequest"/>
+      <output message="tns:AddTaskInCronResponse"/>
+    </operation>
+    <operation name="UpdateTask">
+      <input message="tns:UpdateTaskRequest"/>
+      <output message="tns:UpdateTaskResponse"/>
+    </operation>
+    <operation name="CreateCompany">
+      <input message="tns:CreateCompanyRequest"/>
+      <output message="tns:CreateCompanyResponse"/>
+    </operation>
+    <operation name="CreateUser">
+      <input message="tns:CreateUserRequest"/>
+      <output message="tns:CreateUserResponse"/>
+    </operation>
+    <operation name="CreateUserWithTasks">
+      <input message="tns:CreateUserWithTasksRequest"/>
+      <output message="tns:CreateUserWithTasksResponse"/>
+    </operation>
+    <operation name="CreateTask">
+      <input message="tns:CreateTaskRequest"/>
+      <output message="tns:CreateTaskResponse"/>
+    </operation>
+    <operation name="DeleteUser">
+      <input message="tns:DeleteUserRequest"/>
+      <output message="tns:DeleteUserResponse"/>
+    </operation>
+    <operation name="UpdateUserOneField">
+      <input message="tns:UpdateUserOneFieldRequest"/>
+      <output message="tns:UpdateUserOneFieldResponse"/>
+    </operation>
+    <operation name="FullUpdateUser">
+      <input message="tns:FullUpdateUserRequest"/>
+      <output message="tns:FullUpdateUserResponse"/>
+    </operation>
+    <operation name="doLogin">
+      <input message="tns:doLoginRequest"/>
+      <output message="tns:doLoginResponse"/>
+    </operation>
+    <operation name="getCompany">
+      <input message="tns:getCompanyRequest"/>
+      <output message="tns:getCompanyResponse"/>
+    </operation>
+    <operation name="getUserFull">
+      <input message="tns:getUserFullRequest"/>
+      <output message="tns:getUserFullResponse"/>
+    </operation>
+    <operation name="getUser">
+      <input message="tns:getUserRequest"/>
+      <output message="tns:getUserResponse"/>
+    </operation>
+    <operation name="doRegister">
+      <input message="tns:doRegisterRequest"/>
+      <output message="tns:doRegisterResponse"/>
+    </operation>
+  </portType>
+  <binding name="WrapperSoapServerBinding" type="tns:WrapperSoapServerPortType">
+    <soap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <operation name="DeleteTask">
+      <soap:operation soapAction="http://foo.bar/wrappersoapserver/#DeleteTask"/>
+      <input>
+        <soap:body use="literal" namespace="http://foo.bar/wrappersoapserver"/>
+      </input>
+      <output>
+        <soap:body use="literal" namespace="http://foo.bar/wrappersoapserver"/>
+      </output>
+    </operation>
+    <operation name="MagicSearch">
+      <soap:operation soapAction="http://foo.bar/wrappersoapserver/#MagicSearch"/>
+      <input>
+        <soap:body use="literal" namespace="http://foo.bar/wrappersoapserver"/>
+      </input>
+      <output>
+        <soap:body use="literal" namespace="http://foo.bar/wrappersoapserver"/>
+      </output>
+    </operation>
+    <operation name="AddTaskInCron">
+      <soap:operation soapAction="http://foo.bar/wrappersoapserver/#AddTaskInCron"/>
+      <input>
+        <soap:body use="literal" namespace="http://foo.bar/wrappersoapserver"/>
+      </input>
+      <output>
+        <soap:body use="literal" namespace="http://foo.bar/wrappersoapserver"/>
+      </output>
+    </operation>
+    <operation name="UpdateTask">
+      <soap:operation soapAction="http://foo.bar/wrappersoapserver/#UpdateTask"/>
+      <input>
+        <soap:body use="literal" namespace="http://foo.bar/wrappersoapserver"/>
+      </input>
+      <output>
+        <soap:body use="literal" namespace="http://foo.bar/wrappersoapserver"/>
+      </output>
+    </operation>
+    <operation name="CreateCompany">
+      <soap:operation soapAction="http://foo.bar/wrappersoapserver/#CreateCompany"/>
+      <input>
+        <soap:body use="literal" namespace="http://foo.bar/wrappersoapserver"/>
+      </input>
+      <output>
+        <soap:body use="literal" namespace="http://foo.bar/wrappersoapserver"/>
+      </output>
+    </operation>
+    <operation name="CreateUser">
+      <soap:operation soapAction="http://foo.bar/wrappersoapserver/#CreateUser"/>
+      <input>
+        <soap:body use="literal" namespace="http://foo.bar/wrappersoapserver"/>
+      </input>
+      <output>
+        <soap:body use="literal" namespace="http://foo.bar/wrappersoapserver"/>
+      </output>
+    </operation>
+    <operation name="CreateUserWithTasks">
+      <soap:operation soapAction="http://foo.bar/wrappersoapserver/#CreateUserWithTasks"/>
+      <input>
+        <soap:body use="literal" namespace="http://foo.bar/wrappersoapserver"/>
+      </input>
+      <output>
+        <soap:body use="literal" namespace="http://foo.bar/wrappersoapserver"/>
+      </output>
+    </operation>
+    <operation name="CreateTask">
+      <soap:operation soapAction="http://foo.bar/wrappersoapserver/#CreateTask"/>
+      <input>
+        <soap:body use="literal" namespace="http://foo.bar/wrappersoapserver"/>
+      </input>
+      <output>
+        <soap:body use="literal" namespace="http://foo.bar/wrappersoapserver"/>
+      </output>
+    </operation>
+    <operation name="DeleteUser">
+      <soap:operation soapAction="http://foo.bar/wrappersoapserver/#DeleteUser"/>
+      <input>
+        <soap:body use="literal" namespace="http://foo.bar/wrappersoapserver"/>
+      </input>
+      <output>
+        <soap:body use="literal" namespace="http://foo.bar/wrappersoapserver"/>
+      </output>
+    </operation>
+    <operation name="UpdateUserOneField">
+      <soap:operation soapAction="http://foo.bar/wrappersoapserver/#UpdateUserOneField"/>
+      <input>
+        <soap:body use="literal" namespace="http://foo.bar/wrappersoapserver"/>
+      </input>
+      <output>
+        <soap:body use="literal" namespace="http://foo.bar/wrappersoapserver"/>
+      </output>
+    </operation>
+    <operation name="FullUpdateUser">
+      <soap:operation soapAction="http://foo.bar/wrappersoapserver/#FullUpdateUser"/>
+      <input>
+        <soap:body use="literal" namespace="http://foo.bar/wrappersoapserver"/>
+      </input>
+      <output>
+        <soap:body use="literal" namespace="http://foo.bar/wrappersoapserver"/>
+      </output>
+    </operation>
+    <operation name="doLogin">
+      <soap:operation soapAction="http://foo.bar/wrappersoapserver/#doLogin"/>
+      <input>
+        <soap:body use="literal" namespace="http://foo.bar/wrappersoapserver"/>
+      </input>
+      <output>
+        <soap:body use="literal" namespace="http://foo.bar/wrappersoapserver"/>
+      </output>
+    </operation>
+    <operation name="getCompany">
+      <soap:operation soapAction="http://foo.bar/wrappersoapserver/#getCompany"/>
+      <input>
+        <soap:body use="literal" namespace="http://foo.bar/wrappersoapserver"/>
+      </input>
+      <output>
+        <soap:body use="literal" namespace="http://foo.bar/wrappersoapserver"/>
+      </output>
+    </operation>
+    <operation name="getUserFull">
+      <soap:operation soapAction="http://foo.bar/wrappersoapserver/#getUserFull"/>
+      <input>
+        <soap:body use="literal" namespace="http://foo.bar/wrappersoapserver"/>
+      </input>
+      <output>
+        <soap:body use="literal" namespace="http://foo.bar/wrappersoapserver"/>
+      </output>
+    </operation>
+    <operation name="getUser">
+      <soap:operation soapAction="http://foo.bar/wrappersoapserver/#getUser"/>
+      <input>
+        <soap:body use="literal" namespace="http://foo.bar/wrappersoapserver"/>
+      </input>
+      <output>
+        <soap:body use="literal" namespace="http://foo.bar/wrappersoapserver"/>
+      </output>
+    </operation>
+    <operation name="doRegister">
+      <soap:operation soapAction="http://foo.bar/wrappersoapserver/#doRegister"/>
+      <input>
+        <soap:body use="literal" namespace="http://foo.bar/wrappersoapserver"/>
+      </input>
+      <output>
+        <soap:body use="literal" namespace="http://foo.bar/wrappersoapserver"/>
+      </output>
+    </operation>
+  </binding>
+  <service name="WrapperSoapServerService">
+    <port name="WrapperSoapServerPort" binding="tns:WrapperSoapServerBinding">
+      <soap:address location="http://users.bugred.ru/tasks/soap/WrapperSoapServer.php"/>
+    </port>
+  </service>
+</definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://users.bugred.ru/tasks/soap/WrapperSoapServer.php</con:endpoint></con:endpoints><con:operation id="77f30446-8655-4562-9e16-b6cadb5af3bb" isOneWay="false" action="http://foo.bar/wrappersoapserver/#AddTaskInCron" name="AddTaskInCron" bindingOperationName="AddTaskInCron" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="dbc0d025-88bf-4720-9609-b4c4c33d3843" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://users.bugred.ru/tasks/soap/WrapperSoapServer.php</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:wrap="http://foo.bar/wrappersoapserver">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <wrap:AddTaskInCron>\r
+         <email_owner>?</email_owner>\r
+         <id_task>?</id_task>\r
+         <hours>?</hours>\r
+         <minutes>?</minutes>\r
+         <month>?</month>\r
+         <days>?</days>\r
+         <day_weeks>?</day_weeks>\r
+      </wrap:AddTaskInCron>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://foo.bar/wrappersoapserver/#AddTaskInCron"/></con:call></con:operation><con:operation id="2dec79e8-4da6-48d0-9b11-06e9b44a74d5" isOneWay="false" action="http://foo.bar/wrappersoapserver/#CreateCompany" name="CreateCompany" bindingOperationName="CreateCompany" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="41ff9632-955d-4e56-828a-f8e358f987a3" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://users.bugred.ru/tasks/soap/WrapperSoapServer.php</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:wrap="http://foo.bar/wrappersoapserver" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <wrap:CreateCompany>\r
+         <company_name>?</company_name>\r
+         <company_type>?</company_type>\r
+         <company_users soapenc:arrayType="?" soapenc:offset="?" id="?" href="?"/>\r
+         <email_owner>?</email_owner>\r
+      </wrap:CreateCompany>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://foo.bar/wrappersoapserver/#CreateCompany"/></con:call></con:operation><con:operation id="11bdeb81-a85a-4790-be6a-1c607dacc1a7" isOneWay="false" action="http://foo.bar/wrappersoapserver/#CreateTask" name="CreateTask" bindingOperationName="CreateTask" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="14b0dc1a-228e-45b4-b3f4-afbe9532e318" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://users.bugred.ru/tasks/soap/WrapperSoapServer.php</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:wrap="http://foo.bar/wrappersoapserver">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <wrap:CreateTask>\r
+         <task_title>?</task_title>\r
+         <task_description>?</task_description>\r
+         <email_owner>?</email_owner>\r
+         <email_assign>?</email_assign>\r
+      </wrap:CreateTask>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://foo.bar/wrappersoapserver/#CreateTask"/></con:call></con:operation><con:operation id="5bb97a35-ffc1-40eb-888d-155fbdd02139" isOneWay="false" action="http://foo.bar/wrappersoapserver/#CreateUser" name="CreateUser" bindingOperationName="CreateUser" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="1c788e37-815d-45dc-a69c-487f38df453c" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://users.bugred.ru/tasks/soap/WrapperSoapServer.php</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:wrap="http://foo.bar/wrappersoapserver" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <wrap:CreateUser>\r
+         <email>?</email>\r
+         <name>?</name>\r
+         <tasks soapenc:arrayType="?" soapenc:offset="?" id="?" href="?"/>\r
+         <companies soapenc:arrayType="?" soapenc:offset="?" id="?" href="?"/>\r
+         <hobby>?</hobby>\r
+         <adres>?</adres>\r
+         <name1>?</name1>\r
+         <surname1>?</surname1>\r
+         <fathername1>?</fathername1>\r
+         <cat>?</cat>\r
+         <dog>?</dog>\r
+         <parrot>?</parrot>\r
+         <cavy>?</cavy>\r
+         <hamster>?</hamster>\r
+         <squirrel>?</squirrel>\r
+         <phone>?</phone>\r
+         <inn>?</inn>\r
+         <gender>?</gender>\r
+         <birthday>?</birthday>\r
+         <date_start>?</date_start>\r
+      </wrap:CreateUser>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://foo.bar/wrappersoapserver/#CreateUser"/></con:call></con:operation><con:operation id="10a839d5-f40f-407d-a415-f90ed4cd6ac3" isOneWay="false" action="http://foo.bar/wrappersoapserver/#CreateUserWithTasks" name="CreateUserWithTasks" bindingOperationName="CreateUserWithTasks" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="f3f52bc4-13e9-46fe-b131-aa8338903b73" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://users.bugred.ru/tasks/soap/WrapperSoapServer.php</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:wrap="http://foo.bar/wrappersoapserver" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <wrap:CreateUserWithTasks>\r
+         <email>?</email>\r
+         <name>?</name>\r
+         <tasks soapenc:arrayType="?" soapenc:offset="?" id="?" href="?"/>\r
+         <companies soapenc:arrayType="?" soapenc:offset="?" id="?" href="?"/>\r
+         <hobby>?</hobby>\r
+         <adres>?</adres>\r
+         <name1>?</name1>\r
+         <surname1>?</surname1>\r
+         <fathername1>?</fathername1>\r
+         <cat>?</cat>\r
+         <dog>?</dog>\r
+         <parrot>?</parrot>\r
+         <cavy>?</cavy>\r
+         <hamster>?</hamster>\r
+         <squirrel>?</squirrel>\r
+         <phone>?</phone>\r
+         <inn>?</inn>\r
+         <gender>?</gender>\r
+         <birthday>?</birthday>\r
+         <date_start>?</date_start>\r
+      </wrap:CreateUserWithTasks>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://foo.bar/wrappersoapserver/#CreateUserWithTasks"/></con:call></con:operation><con:operation id="e9008aa2-53a4-412a-8a40-5a3ac0f47ad5" isOneWay="false" action="http://foo.bar/wrappersoapserver/#DeleteTask" name="DeleteTask" bindingOperationName="DeleteTask" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="7c87b467-28f9-4ac1-a162-2bf0ca0520a0" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://users.bugred.ru/tasks/soap/WrapperSoapServer.php</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:wrap="http://foo.bar/wrappersoapserver">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <wrap:DeleteTask>\r
+         <email_owner>?</email_owner>\r
+         <id_task>?</id_task>\r
+      </wrap:DeleteTask>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://foo.bar/wrappersoapserver/#DeleteTask"/></con:call></con:operation><con:operation id="2bdb42e1-3ba1-4097-b856-a6a2b18618a4" isOneWay="false" action="http://foo.bar/wrappersoapserver/#DeleteUser" name="DeleteUser" bindingOperationName="DeleteUser" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="57b35f32-a72d-4e10-8d54-d58afb70470d" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://users.bugred.ru/tasks/soap/WrapperSoapServer.php</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:wrap="http://foo.bar/wrappersoapserver">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <wrap:DeleteUser>\r
+         <email>mwmwmw@gmail.com</email>\r
+      </wrap:DeleteUser>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://foo.bar/wrappersoapserver/#DeleteUser"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="7d8031ea-7202-4182-9bfb-e8c4019bffc1" isOneWay="false" action="http://foo.bar/wrappersoapserver/#doLogin" name="doLogin" bindingOperationName="doLogin" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="c0db5e0b-798e-4628-a3d2-7c5d9d33ccd0" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://users.bugred.ru/tasks/soap/WrapperSoapServer.php</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:wrap="http://foo.bar/wrappersoapserver">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <wrap:doLogin>\r
+         <email>?</email>\r
+         <password>?</password>\r
+      </wrap:doLogin>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://foo.bar/wrappersoapserver/#doLogin"/></con:call></con:operation><con:operation id="4672d2f9-f67e-450e-ad66-e04ae755ac25" isOneWay="false" action="http://foo.bar/wrappersoapserver/#doRegister" name="doRegister" bindingOperationName="doRegister" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="99c12140-eb07-4f29-b495-926fa48d09b9" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://users.bugred.ru/tasks/soap/WrapperSoapServer.php</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:wrap="http://foo.bar/wrappersoapserver">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <wrap:doRegister>\r
+         <email>?</email>\r
+         <name>?</name>\r
+         <password>?</password>\r
+      </wrap:doRegister>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://foo.bar/wrappersoapserver/#doRegister"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="29ed27dc-16a4-46db-adf7-0a7f6be874d2" isOneWay="false" action="http://foo.bar/wrappersoapserver/#FullUpdateUser" name="FullUpdateUser" bindingOperationName="FullUpdateUser" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="d51e3cef-8969-4afd-a481-6b70f5002b8b" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://users.bugred.ru/tasks/soap/WrapperSoapServer.php</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:wrap="http://foo.bar/wrappersoapserver">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <wrap:FullUpdateUser>\r
+         <email>?</email>\r
+         <hobby>?</hobby>\r
+         <name>?</name>\r
+         <name1>?</name1>\r
+         <surname1>?</surname1>\r
+         <fathername1>?</fathername1>\r
+         <cat>?</cat>\r
+         <dog>?</dog>\r
+         <parrot>?</parrot>\r
+         <cavy>?</cavy>\r
+         <hamster>?</hamster>\r
+         <squirrel>?</squirrel>\r
+         <phone>?</phone>\r
+         <adres>?</adres>\r
+         <gender>?</gender>\r
+         <birthday>?</birthday>\r
+         <date_start>?</date_start>\r
+         <inn>?</inn>\r
+      </wrap:FullUpdateUser>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://foo.bar/wrappersoapserver/#FullUpdateUser"/></con:call></con:operation><con:operation id="20a88be7-24ef-40fe-b677-0cb5f230f677" isOneWay="false" action="http://foo.bar/wrappersoapserver/#getCompany" name="getCompany" bindingOperationName="getCompany" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="ad65acf5-f87c-4ee0-acbf-9464aee1194d" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://users.bugred.ru/tasks/soap/WrapperSoapServer.php</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:wrap="http://foo.bar/wrappersoapserver">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <wrap:getCompany>\r
+         <id_company>?</id_company>\r
+      </wrap:getCompany>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://foo.bar/wrappersoapserver/#getCompany"/></con:call></con:operation><con:operation id="3bb935cf-d96d-499b-9541-15268f7e37ea" isOneWay="false" action="http://foo.bar/wrappersoapserver/#getUser" name="getUser" bindingOperationName="getUser" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="d14539a8-48b6-4b41-9af7-304970a7acac" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://users.bugred.ru/tasks/soap/WrapperSoapServer.php</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:wrap="http://foo.bar/wrappersoapserver">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <wrap:getUser>\r
+         <email>?</email>\r
+      </wrap:getUser>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://foo.bar/wrappersoapserver/#getUser"/></con:call></con:operation><con:operation id="34866860-6aa0-4832-beec-78e602b76428" isOneWay="false" action="http://foo.bar/wrappersoapserver/#getUserFull" name="getUserFull" bindingOperationName="getUserFull" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="6b421a2b-b800-41fb-a0a3-e3d6c31ec5e7" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://users.bugred.ru/tasks/soap/WrapperSoapServer.php</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:wrap="http://foo.bar/wrappersoapserver">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <wrap:getUserFull>\r
+         <email>?</email>\r
+      </wrap:getUserFull>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://foo.bar/wrappersoapserver/#getUserFull"/></con:call></con:operation><con:operation id="5f4538fd-e2e2-4c80-9fc1-f89c99339670" isOneWay="false" action="http://foo.bar/wrappersoapserver/#MagicSearch" name="MagicSearch" bindingOperationName="MagicSearch" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="5e4ad02d-b407-4977-9de0-fbeff7f101b8" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://users.bugred.ru/tasks/soap/WrapperSoapServer.php</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:wrap="http://foo.bar/wrappersoapserver">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <wrap:MagicSearch>\r
+         <query>?</query>\r
+         <partyType>?</partyType>\r
+         <taskStatus>?</taskStatus>\r
+         <maxCount>?</maxCount>\r
+      </wrap:MagicSearch>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://foo.bar/wrappersoapserver/#MagicSearch"/></con:call></con:operation><con:operation id="6ba7fa59-98f8-4ac4-8f63-f3b7ced0725c" isOneWay="false" action="http://foo.bar/wrappersoapserver/#UpdateTask" name="UpdateTask" bindingOperationName="UpdateTask" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="0c3aa90e-52d1-4d7d-8526-e9f1e3203f4e" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://users.bugred.ru/tasks/soap/WrapperSoapServer.php</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:wrap="http://foo.bar/wrappersoapserver">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <wrap:UpdateTask>\r
+         <email_owner>?</email_owner>\r
+         <email_assign>?</email_assign>\r
+         <id_task>?</id_task>\r
+         <task_title>?</task_title>\r
+         <task_description>?</task_description>\r
+      </wrap:UpdateTask>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://foo.bar/wrappersoapserver/#UpdateTask"/></con:call></con:operation><con:operation id="373fd391-2764-42f2-b718-609de821b48b" isOneWay="false" action="http://foo.bar/wrappersoapserver/#UpdateUserOneField" name="UpdateUserOneField" bindingOperationName="UpdateUserOneField" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="5dd67544-b3e3-4958-92a4-c15cbc44af48" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://users.bugred.ru/tasks/soap/WrapperSoapServer.php</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:wrap="http://foo.bar/wrappersoapserver">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <wrap:UpdateUserOneField>\r
+         <email>?</email>\r
+         <field>?</field>\r
+         <value>?</value>\r
+      </wrap:UpdateUserOneField>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://foo.bar/wrappersoapserver/#UpdateUserOneField"/></con:call></con:operation></con:interface><con:testSuite id="f743ef1e-171f-4187-b041-ff064b6a7e5b" name="TestSuite 1"><con:settings/><con:runType>SEQUENTIAL</con:runType><con:testCase id="3b93f355-914a-4c1b-8d9c-e8bbfbb28a2c" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="TestCase 1" searchProperties="true"><con:settings/><con:testStep type="request" name="Do Register" id="0f426219-0120-4b6e-9d43-cb6b0e1d1f9b"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>WrapperSoapServerBinding</con:interface><con:operation>doRegister</con:operation><con:request name="Do Register" id="833b72b1-2769-4755-8416-2ed118eaa757"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://users.bugred.ru/tasks/soap/WrapperSoapServer.php</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:wrap="http://foo.bar/wrappersoapserver">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <wrap:doRegister>\r
+         <email>wings@gmail.com</email>\r
+         <name>wings</name>\r
+         <password>1234</password>\r
+      </wrap:doRegister>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response" id="7e359a24-936d-43f8-8e64-a81b893f765a"/><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="request" name="DoLogin" id="80cc1932-b628-46c0-b29d-0ae9efe11584"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>WrapperSoapServerBinding</con:interface><con:operation>doLogin</con:operation><con:request name="DoLogin" id="e81461fb-450a-4714-b0ef-5f7d2fa7d802"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://users.bugred.ru/tasks/soap/WrapperSoapServer.php</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:wrap="http://foo.bar/wrappersoapserver">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <wrap:doLogin>\r
+         <email>wings@gmail.com</email>\r
+         <password>1234</password>\r
+      </wrap:doLogin>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response" id="7d414aca-da2f-40ec-955a-ae686bde3547"/><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="request" name="Delete User" id="4de4d10f-0206-405f-b16e-ef5fe18ab4c4"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>WrapperSoapServerBinding</con:interface><con:operation>DeleteUser</con:operation><con:request name="Delete User" id="8cb70f65-1784-474c-bc67-818a5abbe3ad"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://users.bugred.ru/tasks/soap/WrapperSoapServer.php</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:wrap="http://foo.bar/wrappersoapserver">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <wrap:DeleteUser>\r
+         <email>wings@gmail.com</email>\r
+      </wrap:DeleteUser>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response" id="75bc26d8-0357-4dab-ad68-5ff505a73238"/><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:properties/></con:testSuite><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/></con:soapui-project>
